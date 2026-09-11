@@ -1,0 +1,16 @@
+# Local build products
+Flowmulator
+flowmulator
+embedded_assets.o
+flowmulator.bin
+ios/build/
+
+# User-owned ROMs and save data
+ROMS/*
+SAVES/*
+!ROMS/.gitkeep
+!SAVES/.gitkeep
+
+# Generated release archives
+release/
+Releases/
