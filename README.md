@@ -11,6 +11,7 @@ with the selected ROM and returns to Flowii when Dolphin exits.
 
 - Linux with SDL2, OpenGL, and FUSE (for the bundled Azahar AppImage)
 - Dolphin Emulator available as `dolphin-emu` on `PATH` (Wii uses standalone Dolphin)
+- BlueZ Bluetooth tools/service for real Wii Remote pairing
 - A legally obtained `.gba`, `.nds`, `.iso`, `.wbfs`, or `.rvz` ROM
 
 On Arch/Omarchy, install the runtime dependencies with:
@@ -24,18 +25,24 @@ The release includes the real `Flowmulator` executable and a separate
 assets are embedded in the executable; only Dolphin and the Linux graphics/audio
 libraries are installed by the helper. On a fresh Linux installation, run the
 script once before launching the emulator. When run from a terminal, it offers
-install, update, repair, and uninstall options. Update downloads the latest
+install, update, repair, and uninstall options. Installation and repair apply
+the Hyprland window rules automatically. Update downloads the latest
 release without touching user data; repair installs missing dependencies and
 restores the launcher, while uninstall removes the Flowmulator application
 integration and dependencies but preserves the `ROMS/` and `SAVES/` folders.
+Uninstall also removes Flowmulator's `~/.cache/flowmulator/` runtime cache.
 The script hides Dolphin's standalone application-menu entry; Dolphin remains
 installed as Flowmulator's Wii runtime dependency.
 It also adds only Flowmulator to the desktop application menu and uses the
 included retro-station icon.
+The helper applies the Flowmulator, Azahar, and Dolphin sizing, floating,
+centering, and themed border rules during installation and repair on Hyprland
+systems. Uninstall removes those Flowmulator-managed rules.
 
 To update an existing installation, choose option 2 in `Helper.sh`. It
-downloads the latest `Flowmulator-Linux.tar.gz` release from GitHub, replaces
-the application files, and runs the dependency repair step. It never copies,
+downloads the latest `Flowmulator.v0.8.zip` release from GitHub, backs up and
+restores Flowmulator, Dolphin, and Azahar user configuration, replaces the
+application files, and runs the dependency repair step. It never copies,
 deletes, or replaces `ROMS/` or `SAVES/`.
 
 ## Windows
@@ -59,10 +66,10 @@ and put `Dolphin.exe` on `PATH` or beside Flowmulator. The build creates
 Flowmulator and extracted to a hidden cache only when needed.
 Controller mappings and Dolphin settings are stored under `%APPDATA%`.
 
-The normal development tree keeps source assets in hidden `.assets/` and
-`.runtime/` directories. The shipment package contains no hidden runtime
-folders: its embedded runtime is extracted into the visible `Runtime/`
-directory on first launch.
+The normal development tree keeps source assets and runtime files in hidden
+`.assets/` and `.runtime/` directories. The shipment package extracts its
+embedded runtime into the per-user hidden cache at
+`~/.cache/flowmulator/runtime`, never beside the executable.
 Testers should copy their own `.gba` files into `ROMS/GBA/`, `.nds` files into
 `ROMS/NDS/`, and Wii `.iso`, `.wbfs`, or `.rvz` files into `ROMS/WII/`; saves
 are created automatically in `SAVES/`. ROMs and saves
@@ -115,4 +122,5 @@ Create the tester archive:
 make release
 ```
 
-The archive is written to `Flowmulator-Linux.tar.gz`.
+The ZIP is written to `Flowmulator v0.8.zip`, and the unzipped build is written
+to `Releases/Release v0.8/`. Set `RELEASE_VERSION` when creating another version.
