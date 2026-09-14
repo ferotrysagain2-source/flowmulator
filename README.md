@@ -91,24 +91,6 @@ ROMS/GAMECUBE/
 Saves are stored in `SAVES/`. NDS keeps its native `.dsv` save and also writes
 a `.sav` compatibility copy when a session closes.
 
-## Controls
-
-- **Arrow keys / WASD**: Navigate menus
-- **Enter / Space**: Select
-- **Escape**: Back or exit
-- **Mouse**: Hover and click menu items
-- **F1**: Toggle CRT filter
-- **F2**: Toggle FPS display
-- **F3**: Toggle VSync
-- **F4**: Toggle overlays
-- **Tab**: Hold for temporary turbo
-- **Shift+Tab**: Toggle turbo
-- **T**: Change theme
-
-Open a system’s **Controls** menu to rebind keyboard and controller inputs.
-Wii Remote pairing is handled through Dolphin and the system Bluetooth
-service.
-
 ## Building
 
 Build the optimized local binary:
