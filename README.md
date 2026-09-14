@@ -12,10 +12,9 @@ around a simple station-style menu.
 - Keyboard, controller, and Wii Remote input
 - Mouse navigation throughout the frontend
 - Per-system control profiles
-- Optional CRT filter and GBA overlay
+- Optional CRT filter and overlays
 - Multiple themes and built-in Easter eggs
 - Native Vulkan rendering for the Dolphin/Libretro path
-- No RetroArch dependency or RetroArch user interface
 
 ## Requirements
 
@@ -107,7 +106,7 @@ a `.sav` compatibility copy when a session closes.
 - **F1**: Toggle CRT filter
 - **F2**: Toggle FPS display
 - **F3**: Toggle VSync
-- **F4**: Toggle the GBA overlay
+- **F4**: Toggle overlays
 - **Tab**: Hold for temporary turbo
 - **Shift+Tab**: Toggle turbo
 - **T**: Change theme
