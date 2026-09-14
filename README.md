@@ -1,6 +1,6 @@
 # Flowmulator
 
-Flowmulator is a native SDL emulation frontend for Linux and Windows, built
+Flowmulator is a native SDL emulation frontend for Linux, built
 around a simple station-style menu.
 
 ## Features
@@ -42,12 +42,6 @@ You need legally obtained ROM files. Supported formats include:
 | 3DS | `.3ds`, `.cci` |
 | Wii | `.iso`, `.wbfs`, `.rvz` |
 | GameCube | `.iso`, `.rvz` |
-
-### Windows
-
-The frontend builds natively on 64-bit Windows with SDL2, OpenGL, CMake, and
-either MinGW-w64 or LLVM/Clang. Install Dolphin separately and make
-`Dolphin.exe` available on `PATH` or beside Flowmulator.
 
 ## Installation
 
@@ -131,16 +125,6 @@ make release RELEASE_VERSION=0.8.1 RELEASE_ZIP=Flowmulator.v0.8.1.zip
 
 The package is written to the requested ZIP path, and the extracted release
 directory is written beneath `Releases/`.
-
-For a Windows build:
-
-```powershell
-cmake -S . -B build -G "MinGW Makefiles" `
-  -DCMAKE_CXX_COMPILER=g++ -DCMAKE_MAKE_PROGRAM=mingw32-make
-cmake --build build --config Release
-```
-
-Place the SDL2 runtime DLL beside `Flowmulator.exe`.
 
 ## Project layout
 
