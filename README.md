@@ -90,33 +90,3 @@ ROMS/GAMECUBE/
 
 Saves are stored in `SAVES/`. NDS keeps its native `.dsv` save and also writes
 a `.sav` compatibility copy when a session closes.
-
-## Building
-
-Build the optimized local binary:
-
-```sh
-make
-```
-
-Create a release package:
-
-```sh
-make release RELEASE_VERSION=0.8.1 RELEASE_ZIP=Flowmulator.v0.8.1.zip
-```
-
-The package is written to the requested ZIP path, and the extracted release
-directory is written beneath `Releases/`.
-
-## Project layout
-
-```text
-main.cpp              Frontend, emulator integration, and rendering
-Helper.sh             Linux installation and maintenance helper
-Makefile              Linux build and packaging targets
-CMakeLists.txt        Cross-platform build configuration
-.assets/              Source assets embedded into the executable
-.runtime/             Runtime cores and bundled emulator files
-ROMS/                 User-provided ROMs
-SAVES/                User-generated saves and emulator data
-```
